@@ -48,3 +48,4 @@ generated/
 .turbo
 
 /packages/contracts/*.bin
+dist/

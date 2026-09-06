@@ -1,19 +1,52 @@
 {
-  "name": "@open-engine/sdk",
-  "version": "0.0.0",
-  "type": "module",
-  "description": "SDK for interacting with open-engine API",
-  "scripts": {
-    "lint": "biome lint .",
-    "format": "biome format --write .",
-    "typecheck": "tsc --noEmit"
-  },
-  "exports": {
-    ".": "./src/index.ts"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "typescript": "6.0.3",
-    "viem": "^2.55.19"
-  }
+	"name": "open-engine-sdk",
+	"version": "0.0.1",
+	"type": "module",
+	"description": "SDK for interacting with open-engine API",
+	"author": "decentri-dev",
+	"license": "Apache-2.0",
+	"keywords": [
+		"open-engine",
+		"web3",
+		"ethereum",
+		"eip-8141",
+		"viem",
+		"sdk"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/decentri-dev/open-engine-sdk-ts.git"
+	},
+	"bugs": {
+		"url": "https://github.com/decentri-dev/open-engine-sdk-ts/issues"
+	},
+	"homepage": "https://github.com/decentri-dev/open-engine-sdk-ts#readme",
+	"scripts": {
+		"build": "tsup src/index.ts --format cjs,esm --dts --clean",
+		"lint": "biome lint .",
+		"format": "biome format --write .",
+		"typecheck": "tsc --noEmit"
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": {
+				"import": "./dist/index.d.ts",
+				"require": "./dist/index.d.cts"
+			},
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.12",
+		"tsup": "^8.5.1",
+		"typescript": "6.0.3",
+		"viem": "^2.55.19"
+	}
 }
