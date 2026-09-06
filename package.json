@@ -1,8 +1,7 @@
 {
-  "name": "@open-engine/sdk",
+  "name": "@erc8286/open-engine-sdk",
   "version": "0.0.0",
   "type": "module",
-  "private": true,
   "description": "SDK for interacting with open-engine API",
   "scripts": {
     "lint": "biome lint .",
@@ -14,8 +13,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@workspace/typescript-config": "workspace:*",
-    "typescript": "catalog:",
-    "viem": "catalog:"
+    "typescript": "6.0.3",
+    "viem": "^2.55.19"
   }
 }
